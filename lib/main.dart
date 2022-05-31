@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_manager/screens/auth/recover_screen.dart';
+import 'screens/screens.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,16 +11,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: 'launch',
+      routes: {
+        'launch': (_) => const LaunchScreen(),
+        'login': (_) => const LoginScreen(),
+        'register': (_) => const RegisterScreen(),
+        'recover': (_) => const RecoverScreen(),
+
+        'dashboard': (_) => const DashboardScreen(),
+      },
     );
   }
 }
