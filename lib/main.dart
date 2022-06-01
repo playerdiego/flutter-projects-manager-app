@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_manager/screens/auth/recover_screen.dart';
-import 'screens/screens.dart';
+import 'package:project_manager/router/router.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,15 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      initialRoute: 'launch',
-      routes: {
-        'launch': (_) => const LaunchScreen(),
-        'login': (_) => const LoginScreen(),
-        'register': (_) => const RegisterScreen(),
-        'recover': (_) => const RecoverScreen(),
-
-        'dashboard': (_) => const DashboardScreen(),
-      },
+      initialRoute: AppRouter.initialRoute,
+      routes: AppRouter.getRoutes(),
     );
   }
 }
